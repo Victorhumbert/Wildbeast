@@ -17,7 +17,7 @@ a {
   text-decoration: none;
 }
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
   border-radius: 5px;
 }
@@ -122,10 +122,10 @@ img {
 }
 
 @keyframes seta {
-  from{
+  from {
     right: 30px;
   }
-  to{
+  to {
     right: 20px;
   }
 }
@@ -137,22 +137,22 @@ img {
   .sidenav li {
     flex: 1 0 60px;
   }
-  .sidenav{
+  .sidenav {
     padding: 0 30px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     position: relative;
   }
-  .sidenav::after{
-    content: '➝';
+  .sidenav::after {
+    content: "➝";
     position: absolute;
     top: 5px;
     right: 30px;
     color: #0000009a;
-    animation: seta .5s ease-in 0s infinite alternate;
+    animation: seta 0.5s ease-in 0s infinite alternate;
   }
-  .sidenav li a{
+  .sidenav li a {
     margin: 30px 30px 30px 0;
   }
 }
@@ -166,6 +166,13 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .content,
+  .titulo {
+    grid-template-columns: auto;
+  }
 }
 
 .col-wide {
@@ -290,6 +297,7 @@ p {
   align-content: start;
   padding: 30px;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* Footer */
